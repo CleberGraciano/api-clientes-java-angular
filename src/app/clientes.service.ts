@@ -32,6 +32,12 @@ export class ClientesService {
 
   }
 
+  deletar(cliente: Cliente): Observable<any>{
+  
+    return this.http.delete<any>(`https://api-servico-cliente.herokuapp.com/v1/customers/${cliente.id}`);
+
+  }
+
 
 
 }
