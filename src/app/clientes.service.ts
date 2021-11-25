@@ -15,6 +15,11 @@ export class ClientesService {
   
   }
 
+  atualizar(cliente: Cliente): Observable<any>{
+    return this.http.put<Cliente>(`https://api-servico-cliente.herokuapp.com/v1/customers/${cliente.id}`, cliente);
+  
+  }
+
   getClientes() : Observable<Cliente[]>{
      
     return this.http.get<Cliente[]>('https://api-servico-cliente.herokuapp.com/v1/customers');
@@ -26,5 +31,7 @@ export class ClientesService {
     return this.http.get<any>(`https://api-servico-cliente.herokuapp.com/v1/customers/${id}`);
 
   }
+
+
 
 }
