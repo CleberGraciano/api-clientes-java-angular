@@ -8,20 +8,23 @@ import { Observable } from 'rxjs';
 })
 export class ClientesService {
 
-  constructor(private http: HttpClient) { 
-    
-  }
+  constructor(private http: HttpClient) { }
 
   salvar(cliente: Cliente): Observable<Cliente>{
     return this.http.post<Cliente>('https://api-servico-cliente.herokuapp.com/v1/customers', cliente);
   
   }
 
-  getCliente() : Cliente{
-    let cliente : Cliente = new Cliente();
-    cliente.nome = 'Cleber';
-    cliente.cpf = '8888888';
-    return cliente;
+  getClientes() : Observable<Cliente[]>{
+     
+    return this.http.get<Cliente[]>('https://api-servico-cliente.herokuapp.com/v1/customers');
     
   }
+
+  getClienteById(id: number): Observable<Cliente>{
+  
+    return this.http.get<any>(`https://api-servico-cliente.herokuapp.com/v1/customers/${id}`);
+
+  }
+
 }
