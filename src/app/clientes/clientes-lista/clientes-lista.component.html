@@ -40,7 +40,7 @@
                         <td>{{ cliente.cpf }}</td>
                         <td>{{ cliente.dataCadastro }}</td>
                         <td>
-                            <button class="btn btn-default" routerLink="/clientes-form/{{ cliente.id }}"><i class="fa fa-pen" style="color: rgb(2, 85, 20);"></i></button>
+                            <button class="btn btn-default" routerLink="/clientes/form/{{ cliente.id }}"><i class="fa fa-pen" style="color: rgb(2, 85, 20);"></i></button>
                             <button class="btn btn-default" data-toggle="modal" data-target="#modalDelecao" (click)="preparaDelecao(cliente)"><i class="fa fa-trash" style="color: brown;"></i></button> 
                             
                         </td>
